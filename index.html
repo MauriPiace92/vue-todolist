@@ -25,23 +25,25 @@
 
             <!-- input & buttom todo -->
             <div class="input-todo">
-                <input class="bartext" type="text" placeholder="Write new thing todo">
-                <button class="btnadd" >Aggiungi</button>                
+                <input v-model='inputUser' @keyup.enter='newToDo' class="bartext" type="text" placeholder="Write new thing todo">
+                
+                <button class="btnadd" @click='newToDo' >Aggiungi</button>                
             </div>
             <!-- end input & buttom todo -->
 
             <!-- Todo-container -->
             <div class="todos">
-                <ul class="item-list">
+                <ul v-if='todos.length' class="item-list">
                     <!-- single item -->
-                    <li v-for='todo in todos' class="single-item">
+                    <li v-for='(todo,index) in todos' class="single-item">
                         {{todo}}
-                        <span class="delete">
+                        <span class="delete" @click='deleteItem(index)'>
                             <i class="fas fa-trash-alt"></i>
                         </span>
                     </li>
                     <!-- end single item -->
                 </ul>
+                <div class="no-todo" v-else>No Things to do! think something to do! <i class="fas fa-sad-cry"></i></div>
             </div>
             <!--End Todo-container -->
 

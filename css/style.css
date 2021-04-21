@@ -62,6 +62,13 @@ img{
 .delete{
     float: right;
     font-size: 20px;
-    color: #B20D0D;
+    color: black;
     cursor: pointer;
+}
+.delete:hover{
+    color: #B20D0D;
+}
+
+.no-todo{
+    font-size:30px;
 }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>vue-todolist</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+</head>
+<body>
+    <div id="root">
+        <div class="container-todo">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="https://www.boolean.careers/images/misc/logo.png" alt="logo">
+            </div>
+            <!-- end Logo -->
+
+            <!-- input & buttom todo -->
+            <div class="input-todo">
+                <input class="bartext" type="text" placeholder="Write new thing todo">
+                <button class="btnadd" >Aggiungi</button>                
+            </div>
+            <!-- end input & buttom todo -->
+
+            <!-- Todo-container -->
+            <div class="todos">
+                <ul class="item-list">
+                    <!-- single item -->
+                    <li v-for='todo in todos' class="single-item">
+                        {{todo}}
+                        <span class="delete">
+                            <i class="fas fa-trash-alt"></i>
+                        </span>
+                    </li>
+                    <!-- end single item -->
+                </ul>
+            </div>
+            <!--End Todo-container -->
+
+        </div>
+
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
